@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "15489924-3311-4be6-b76a-8c6ab3113d37",
+		"name": "mean-frame-postman-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMDVUMTY6MzI6NDMuNzQ5WiJ9LCJpYXQiOjE2MTc2NDAzNjN9.6URDWCzjB7pq61e7kHSiT-qqfD2s4srf-wEuCYvl7BA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/allUsers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"user@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/pub/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pub",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"New\",\n\t\"lastName\" : \"User\",\n\t\"email\": \"newuser@gmail.com\",\n\t\"password\": \"123456\",\n\t\"code\": \"123\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/pub/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pub",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMDVUMTY6MzI6NDMuNzQ5WiJ9LCJpYXQiOjE2MTc2NDAzNjN9.6URDWCzjB7pq61e7kHSiT-qqfD2s4srf-wEuCYvl7BA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/api/me",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMDVUMTY6MzI6NDMuNzQ5WiJ9LCJpYXQiOjE2MTc2NDAzNjN9.6URDWCzjB7pq61e7kHSiT-qqfD2s4srf-wEuCYvl7BA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"This is first post by Author\",\n\t\"description\" : \"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/post/insert",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMDVUMTY6MzI6NDMuNzQ5WiJ9LCJpYXQiOjE2MTc2NDAzNjN9.6URDWCzjB7pq61e7kHSiT-qqfD2s4srf-wEuCYvl7BA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/post/list",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts By Author",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMDVUMTY6MzI6NDMuNzQ5WiJ9LCJpYXQiOjE2MTc2NDAzNjN9.6URDWCzjB7pq61e7kHSiT-qqfD2s4srf-wEuCYvl7BA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/post/list/author/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"list",
+						"author",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDIxLTA0LTA1VDE2OjAwOjAzLjM1OFoifSwiaWF0IjoxNjE3NjM4NDAzfQ.0dvwLp88Bo5awFSyM65nglFaIilEGDi2-Oqxycl3ZTo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Post title changed\",\n\t\"description\" : \"While point and figure charting has never been at the top of the list of popular techniques used by technical analysts, there is a growing interest in P&F from all corners of the charting community. Here we take a close look at P&F charts and how to read and construct them.\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/post/update/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDIxLTA0LTA1VDE2OjAwOjAzLjM1OFoifSwiaWF0IjoxNjE3NjM4NDAzfQ.0dvwLp88Bo5awFSyM65nglFaIilEGDi2-Oqxycl3ZTo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/post/delete/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "78df6097-08d6-4d6c-8135-b333ef90a897",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "85566431-0c09-4867-8ac6-83690d24a069",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a120b6a3-1264-45f9-8ab2-bcf22789f94b",
+			"key": "host",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"id": "5fa53040-6167-44fd-9e33-32362fe7652e",
+			"key": "token",
+			"value": "aasd",
+			"type": "string"
+		}
+	]
+}
